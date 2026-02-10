@@ -7,7 +7,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 20px;
-    font-size: var(--font-xs);
+    font-size: var(--font-sm);
 }
 
 .nav-links a {

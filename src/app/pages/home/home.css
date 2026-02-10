@@ -1,3 +1,58 @@
-p {
-    font-family: var(--font-audiowide);
+.app-layout {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3.5rem;
+}
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.hero-left h1 {
+    font-size: var(--font-lg);
+    margin-bottom: 2rem;
+    color: var(--primary);
+}
+
+.hero-left p {
+    font-size: var(--font-sm);
+    margin-bottom: 2rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.logo {
+    width: 15rem;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo {
+        width: 10rem;
+        height: auto;
+    }
 }

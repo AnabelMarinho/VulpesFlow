@@ -5,9 +5,10 @@
 }
 
 body {
+    height: 100%;
     background-color: var(--secondary);
     color: var(--accent);
-    padding: 1.5rem 1.5rem 0 1.5rem;
+    padding: 2.5rem 2.5rem 0 2.5rem;
     font-family: var(--font-rajdhani);
 }
 
@@ -16,12 +17,13 @@ body {
     --secondary: #191A23;
     --accent: #F3F3F3;
 
-    --font-xs: 1.25rem;
-    --font-sm: 0.875rem;
-    --font-md: 1rem;
-    --font-lg: 1.25rem;
+    --font-xs: 1.125rem;
+    --font-sm: 1.25rem;
+    --font-md: 1.875rem;
+    --font-lg: 2.75rem;
 
     --radius: 1rem;
+    --radius-large: 2.8125rem;
     --font-audiowide: 'Audiowide', cursive;
     --font-rajdhani: 'Rajdhani', sans-serif;
 }
