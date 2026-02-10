@@ -1,0 +1,40 @@
+.btn {
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--accent);
+    font-size: var(--font-sm);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.primary {
+    background-color: var(--accent);
+    color: var(--secondary);
+}
+
+.btn.primary:hover {
+    background-color: var(--secondary);
+    color: var(--accent);
+}
+
+.btn.secondary {
+    background-color: transparent;
+    color: var(--accent);
+}
+
+.btn.secondary:hover {
+    background-color: var(--accent);
+    color: var(--secondary);
+}
+
+.btn.tertiary {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: solid 1px var(--primary);
+}
+
+.btn.tertiary:hover {
+    background-color: transparent;
+    color: var(--primary);
+}
