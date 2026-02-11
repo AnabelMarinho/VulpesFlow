@@ -1,0 +1,17 @@
+.section-equipe {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: end;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
