@@ -1,4 +1,4 @@
-.main {
+.info-card-container {
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -6,6 +6,12 @@
   max-width: 35rem;
   height: 100%;
 }
+
+.info-card-container:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
 
 .icon {
   padding: 1rem;

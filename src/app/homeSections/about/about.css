@@ -14,3 +14,55 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
 }
+
+.benefits-list,
+.what-we-do-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.benefits,
+.what-we-do {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+.benefits p:hover,
+.what-we-do p:hover {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.icon {
+    border-radius: 50%;
+}
+
+.what-we-do-icon {
+    border-radius: var(--radius);
+}
+
+.icon,
+.what-we-do-icon {
+    width: 4rem;
+    height: 4rem;
+    color: var(--primary);
+    border: 2px solid var(--accent);
+    padding: 1rem;
+}
+
+.icon path,
+.what-we-do-icon {
+  fill: currentColor;
+}
+
+@media (max-width: 764px) {
+.benefits-list,
+.what-we-do-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+}
