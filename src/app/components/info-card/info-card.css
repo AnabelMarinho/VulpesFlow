@@ -1,0 +1,31 @@
+.main {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  max-width: 35rem;
+  height: 100%;
+}
+
+.icon {
+  padding: 1rem;
+  border-radius: 0 20px 20px 0;
+}
+
+.icon img {
+  width: 32px;
+}
+
+.content {
+  padding-left: 1rem;
+}
+
+.content h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.content p {
+  margin: .3rem 0 0;
+  font-size: .85rem;
+}

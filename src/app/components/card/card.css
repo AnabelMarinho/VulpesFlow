@@ -1,18 +1,13 @@
 .card-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 20rem;
 }
 
 .card-container:hover {
   transform: translateY(-5px);
   cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .card-image {
@@ -22,9 +17,8 @@ a {
   aspect-ratio: 1 / 1;
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 0.2rem 0 0.2rem var(--primary);
+  box-shadow: 0 0.1rem 0 0.2rem var(--primary);
 }
-
 
 .card-image img {
   width: 100%;
@@ -37,6 +31,13 @@ a {
   flex-direction: column;
   gap: 0.5rem;
   max-width: 20rem;
+}
+
+/* Remove default link styles */
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .overlay-text {
@@ -56,3 +57,4 @@ a {
 .card-image:hover .overlay-text {
   opacity: 1;
 }
+

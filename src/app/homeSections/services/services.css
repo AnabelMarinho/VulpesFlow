@@ -20,10 +20,15 @@
 }
 
 @media (max-width: 768px) {
+    .section-services {
+        display: flex;
+        align-items: center;
+    }
     .services-list {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 3rem;
     }
 
     .services-list > *:nth-child(2n) {

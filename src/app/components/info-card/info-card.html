@@ -1,0 +1,18 @@
+<div 
+  class="main"
+  [ngStyle]="{ background: theme.background, border: theme.border }"
+>
+  <div class="icon" [ngStyle]="{ background: theme.iconBg }">
+    <img [src]="icon" [alt]="title">
+  </div>
+
+  <div class="content">
+    <h3 [ngStyle]="{ color: theme.title }">
+      {{ title }}
+    </h3>
+
+    <p [ngStyle]="{ color: theme.text }">
+      {{ description }}
+    </p>
+  </div>
+</div>
