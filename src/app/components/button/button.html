@@ -1,3 +1,20 @@
-<button class="btn" [ngClass]="variant">
-    {{ label }}
-</button>
+<a
+  *ngIf="routerLink; else buttonTpl"
+  class="btn"
+  [ngClass]="variant"
+  [routerLink]="routerLink"
+>
+  <span class="btn-label">{{ label }}</span>
+</a>
+
+<ng-template #buttonTpl>
+  <button
+    class="btn"
+    [ngClass]="variant"
+    [attr.type]="type"
+    [disabled]="disabled"
+    (click)="pressed.emit($event)"
+  >
+    <span class="btn-label">{{ label }}</span>
+  </button>
+</ng-template>
