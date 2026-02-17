@@ -1,6 +1,38 @@
 nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    width: 100%;
+    max-width: min(100%, calc(100vh * 16 / 9));
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2.5rem;
+    background: rgba(15, 17, 23, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, transform 0.35s ease, opacity 0.35s ease;
+}
+
+nav.is-scrolled {
+    padding: 0.85rem 2.5rem;
+    background: rgba(15, 17, 23, 0.92);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+nav.is-hidden {
+    transform: translateX(-50%) translateY(-130%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+#logo-container {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .nav-links {
@@ -14,6 +46,7 @@ nav {
     text-decoration: none;
     color: var(--accent);
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
