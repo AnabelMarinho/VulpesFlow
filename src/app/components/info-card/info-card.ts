@@ -18,25 +18,25 @@ export class InfoCard {
 get theme() {
     const themes = {
       primary: {
-        background: 'var(--primary)',
+        background: 'var(--bg-surface)',
         title: 'var(--accent)',
-        text: 'var(--secondary)',
-        border: '1px solid var(--accent)',
-        iconBg: 'var(--secondary)'
+        text: 'rgba(243, 243, 243, 0.82)',
+        border: '1px solid rgba(255, 107, 53, 0.35)',
+        iconBg: 'rgba(255, 107, 53, 0.14)'
       },
       secondary: {
-        background: 'var(--accent)',
-        title: 'var(--primary)',
-        text: 'var(--secondary)',
-        border: '1px solid transparent',
-        iconBg: 'var(--secondary)'
+        background: 'var(--bg-surface)',
+        title: 'var(--accent)',
+        text: 'rgba(243, 243, 243, 0.82)',
+        border: '1px solid rgba(255, 255, 255, 0.08)',
+        iconBg: 'rgba(255, 255, 255, 0.08)'
       },
       tertiary: {
-        background: 'var(--secondary)',
+        background: 'var(--bg-surface)',
         title: 'var(--accent)',
-        text: 'var(--accent)',
-        border: '1px solid var(--accent)',
-        iconBg: 'var(--accent)'
+        text: 'rgba(243, 243, 243, 0.82)',
+        border: '1px solid rgba(255, 255, 255, 0.08)',
+        iconBg: 'rgba(255, 255, 255, 0.08)'
       },
     };
 
