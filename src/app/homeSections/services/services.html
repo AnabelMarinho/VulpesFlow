@@ -1,33 +1,84 @@
-<section class="section-services">
-    <app-section-header
-        title="Serviços"
-        description="Na VulpesFlow, desenvolvemos soluções digitais sob demanda e também criamos nossos próprios produtos. Nossos serviços incluem:"
-    ></app-section-header>
-
-    <div class="services-list">
-        <app-card
-        image="assets/icon1.svg"
-        title="Automoção de WhatsApp"
-        description="Bots, respostas automáticas, funis, integrações"
-        ></app-card>
-
-        <app-card
-        image="assets/icon3.svg"
-        title="Automação de E-mail"
-        description="Fluxos, notificações, follow-ups"
-        ></app-card>
-
-        <app-card
-        image="assets/icon2.svg"
-        title="Integrações e Planilhas inteligentes"
-        description="Google Sheets, dashboards, APIs"
-        ></app-card>
-
-        <app-card
-        image="assets/icon4.svg"
-        title="Monitoramento e Operações"
-        description="Alertas, logs, acompanhamento em tempo real"
-        ></app-card>
+<section id="services-section" class="section-services vf-section">
+  <div class="vf-container">
+    <div class="services-hero">
+      <div class="services-copy">
+        <h2 class="services-title">Nossos serviços</h2>
+        <p class="services-lead">
+          Da automação ao produto — a VulpesFlow desenha e constrói experiências
+          que simplificam o seu operacional e aceleram o crescimento.
+        </p>
+      </div>
+      <div class="services-feature media media--feature">
+        <img src="assets/icon2.svg" alt="Serviços VulpesFlow" />
+      </div>
     </div>
-    <div class="btn-container"><app-button label="Ver todos os serviços"></app-button></div>
+
+    <div class="services-rows">
+      <article class="service-row">
+        <div class="media media--orange">
+          <img src="assets/icon1.svg" alt="Automação de WhatsApp" />
+        </div>
+        <div class="service-body">
+          <div class="service-kicker">
+            <span class="service-dot"></span>Automação
+          </div>
+          <h3 class="service-name">Automação de WhatsApp</h3>
+          <p class="service-desc">
+            Bots, respostas automáticas, funis e integrações.
+          </p>
+        </div>
+      </article>
+
+      <article class="service-row reverse">
+        <div class="media media--blue">
+          <img src="assets/icon3.svg" alt="Automação de E-mail" />
+        </div>
+        <div class="service-body">
+          <div class="service-kicker">
+            <span class="service-dot"></span>Relacionamento
+          </div>
+          <h3 class="service-name">Automação de E-mail</h3>
+          <p class="service-desc">
+            Fluxos, notificações e follow-ups que convertem.
+          </p>
+        </div>
+      </article>
+
+      <article class="service-row">
+        <div class="media media--violet">
+          <img
+            src="assets/icon2.svg"
+            alt="Integrações e Planilhas inteligentes"
+          />
+        </div>
+        <div class="service-body">
+          <div class="service-kicker">
+            <span class="service-dot"></span>Integrações
+          </div>
+          <h3 class="service-name">Integrações e planilhas inteligentes</h3>
+          <p class="service-desc">
+            Google Sheets, dashboards e APIs conectadas ao seu negócio.
+          </p>
+        </div>
+      </article>
+
+      <article class="service-row reverse">
+        <div class="media media--graphite">
+          <img src="assets/icon4.svg" alt="Monitoramento e Operações" />
+        </div>
+        <div class="service-body">
+          <div class="service-kicker">
+            <span class="service-dot"></span>Operação
+          </div>
+          <h3 class="service-name">Monitoramento e operações</h3>
+          <p class="service-desc">
+            Alertas, logs e acompanhamento em tempo real.
+          </p>
+        </div>
+      </article>
+    </div>
+    <div class="btn-container">
+      <app-button label="Ver todos os serviços"></app-button>
+    </div>
+  </div>
 </section>

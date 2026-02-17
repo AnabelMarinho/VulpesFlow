@@ -1,17 +1,161 @@
-.section-services {
+.section-services .vf-container {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 4rem;
 }
 
-.services-list {
+.services-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.services-title {
+    font-size: clamp(2.6rem, 6vw, 5.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    color: var(--accent);
+    margin: 0;
+}
+
+.services-lead {
+    margin-top: 1.25rem;
+    font-size: var(--font-sm);
+    color: rgba(243, 243, 243, 0.78);
+    max-width: 44rem;
+}
+
+.services-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+.service-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 2.25rem;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    background: rgba(29, 33, 48, 0.46);
+    border: var(--border-subtle);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.services-list > *:nth-child(2n) {
-    margin-top: 5rem;
+.service-row:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.36);
+}
+
+.service-row.reverse .media {
+    order: 2;
+}
+
+.service-row.reverse .service-body {
+    order: 1;
+}
+
+.media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 6 / 5;
+    border-radius: 1.75rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media::before {
+    content: '';
+    position: absolute;
+    inset: -35%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0) 58%);
+    filter: blur(2px);
+    transform: rotate(-12deg);
+    opacity: 0.75;
+}
+
+.media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 20%, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0) 55%);
+    opacity: 0.9;
+}
+
+.media img {
+    width: min(52%, 150px);
+    height: auto;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.35));
+    opacity: 0.92;
+}
+
+.media--orange {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.92), rgba(255, 196, 90, 0.82));
+}
+
+.media--blue {
+    background: linear-gradient(135deg, rgba(0, 82, 255, 0.9), rgba(26, 180, 255, 0.62));
+}
+
+.media--violet {
+    background: linear-gradient(135deg, rgba(142, 81, 255, 0.88), rgba(255, 107, 53, 0.55));
+}
+
+.media--graphite {
+    background: linear-gradient(135deg, rgba(61, 66, 82, 0.92), rgba(17, 20, 31, 0.92));
+}
+
+.media--feature {
+    aspect-ratio: 1 / 1;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.55), rgba(15, 17, 23, 0) 60%),
+        linear-gradient(135deg, rgba(19, 24, 36, 0.96), rgba(33, 37, 54, 0.92));
+}
+
+.service-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.service-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgba(243, 243, 243, 0.72);
+    font-size: var(--font-xs);
+}
+
+.service-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--primary);
+    box-shadow: 0 0 0 6px rgba(255, 107, 53, 0.14);
+}
+
+.service-name {
+    margin: 0;
+    font-size: clamp(1.4rem, 2.2vw, 2.3rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.service-desc {
+    margin: 0;
+    color: rgba(243, 243, 243, 0.76);
+    font-size: var(--font-sm);
 }
 
 .btn-container {
@@ -20,18 +164,30 @@
 }
 
 @media (max-width: 768px) {
-    .section-services {
+    .section-services .vf-container {
         display: flex;
         align-items: center;
     }
-    .services-list {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 3rem;
+
+    .services-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
     }
 
-    .services-list > *:nth-child(2n) {
-        margin-top: 0rem;
+    .services-lead {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .service-row.reverse .media,
+    .service-row.reverse .service-body {
+        order: unset;
     }
 }
