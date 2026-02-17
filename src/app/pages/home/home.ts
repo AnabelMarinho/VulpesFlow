@@ -5,11 +5,12 @@ import { Header } from '../../components/header/header';
 import { Services } from '../../homeSections/services/services';
 import { Equipe } from '../../homeSections/equipe/equipe';
 import { About } from '../../homeSections/about/about';
+import { ContatoCta } from '../../homeSections/contato-cta/contato-cta';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Button, Footer, Header, About, Services, Equipe],
+  imports: [Button, Footer, Header, About, Services, Equipe, ContatoCta],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
