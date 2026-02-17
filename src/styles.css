@@ -4,18 +4,49 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     height: 100%;
-    background-color: var(--secondary);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-page);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     color: var(--accent);
-    padding: 2.5rem 2.5rem 0 2.5rem;
+    padding: 0;
     font-family: var(--font-rajdhani);
+}
+
+app-root {
+    display: block;
+    width: 100%;
+    max-width: min(100%, calc(100vh * 16 / 9));
+    margin: 0 auto;
+    padding: 0 2.5rem;
 }
 
 :root {
     --primary: #FF6B35;
     --secondary: #191A23;
     --accent: #F3F3F3;
+    --bg-page: linear-gradient(
+      135deg,
+      #0F1117 0%,
+      #141824 40%,
+      #191A23 100%
+    );
+    --bg-section: #151823;
+    --bg-surface: #1D2130;
+    --border-subtle: 1px solid rgba(255, 255, 255, 0.05);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.25);
+    --header-height: 5.5rem;
 
     --font-xs: 1.125rem;
     --font-sm: 1.25rem;
@@ -26,6 +57,52 @@ body {
     --radius-large: 2.8125rem;
     --font-audiowide: 'Audiowide', cursive;
     --font-rajdhani: 'Rajdhani', sans-serif;
+}
+
+.vf-section {
+    position: relative;
+    background: var(--bg-section);
+    border-radius: 2.5rem;
+    padding: 6rem 2rem;
+    margin: 8rem 0;
+    border: var(--border-subtle);
+    box-shadow: var(--shadow-soft);
+    scroll-margin-top: calc(var(--header-height) + 2rem);
+}
+
+.vf-section::before,
+.vf-section::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: min(100%, 1200px);
+    transform: translateX(-50%);
+    pointer-events: none;
+    background: var(--bg-page);
+}
+
+.vf-section::before {
+    top: 0;
+    height: 76px;
+    border-bottom-left-radius: 60% 100%;
+    border-bottom-right-radius: 60% 100%;
+    opacity: 0.9;
+}
+
+.vf-section::after {
+    bottom: 0;
+    height: 76px;
+    border-top-left-radius: 60% 100%;
+    border-top-right-radius: 60% 100%;
+    opacity: 0.6;
+}
+
+.vf-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 @font-face {
