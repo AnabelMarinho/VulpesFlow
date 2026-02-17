@@ -1,0 +1,92 @@
+<div class="contato-page">
+  <app-header></app-header>
+
+  <main class="contato-main">
+    <section class="vf-section contato-section">
+      <div class="vf-container">
+        <h1 class="contato-title">Conta sua ideia pra gente</h1>
+        <p class="contato-subtitle">
+          iremos analisar sua ideia e entraremos em contato com uma proposta imperdível
+        </p>
+
+        <form class="contato-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-block">
+            <h2 class="block-title">Estou interessado em...</h2>
+            <div class="chips-grid">
+              <button
+                *ngFor="let topic of interestTopics"
+                type="button"
+                class="chip"
+                [class.selected]="isInterestSelected(topic)"
+                (click)="toggleInterest(topic)"
+              >
+                {{ topic }}
+              </button>
+            </div>
+          </div>
+
+          <div class="form-block">
+            <div class="fields-grid">
+              <label class="field">
+                <span class="field-label">Seu nome</span>
+                <input class="input" type="text" formControlName="name" placeholder="Seu nome" />
+              </label>
+
+              <label class="field">
+                <span class="field-label">E-Mail</span>
+                <input class="input" type="email" formControlName="email" placeholder="E-Mail" />
+              </label>
+
+              <label class="field field-full">
+                <span class="field-label">Fala pra gente sobre seu projeto</span>
+                <textarea
+                  class="textarea"
+                  rows="5"
+                  formControlName="description"
+                  placeholder="Fala pra gente sobre seu projeto"
+                ></textarea>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-block">
+            <h2 class="block-title">Orçamento (BRL)</h2>
+            <div class="chips-row">
+              <button
+                *ngFor="let option of budgetOptions"
+                type="button"
+                class="chip"
+                [class.selected]="isBudgetSelected(option)"
+                (click)="selectBudget(option)"
+              >
+                {{ option }}
+              </button>
+            </div>
+          </div>
+
+          <div class="form-block">
+            <h2 class="block-title">Anexo (opcional)</h2>
+            <label class="file">
+              <input class="file-input" type="file" (change)="onFileSelected($event)" />
+              <span class="file-cta">Adicionar anexo</span>
+              <span class="file-name" *ngIf="form.controls.attachment.value as f">{{ f.name }}</span>
+            </label>
+          </div>
+
+          <div class="actions">
+            <app-button
+              label="Enviar proposta"
+              variant="primary"
+              type="submit"
+              [disabled]="form.invalid"
+            ></app-button>
+            <p class="success" *ngIf="sent()">Enviado! Já já a gente te responde.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+</div>
+
