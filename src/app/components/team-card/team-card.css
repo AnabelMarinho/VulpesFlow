@@ -19,6 +19,11 @@
     padding: 4px;
 }
 
+.icon:hover {
+    background-color: var(--secondary);
+    border: solid 1px var(--accent)
+}
+
 .icon path {
   fill: currentColor;
 }

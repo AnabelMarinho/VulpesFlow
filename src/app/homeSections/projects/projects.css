@@ -1,0 +1,47 @@
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.projects-container p {
+    font-size: var(--font-xs);
+}
+
+.projects-container p span {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.tech-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.icon {
+    width: 5rem;
+    height: 3rem;
+    color: var(--secondary);
+    background-color: var(--accent);
+    border-radius: var(--radius);
+    padding: 8px;
+}
+
+.icon:hover {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.icon path {
+  fill: currentColor;
+}
+
+.icon:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.button-container {
+    align-self: self-end;
+}

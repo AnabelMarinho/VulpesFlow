@@ -1,4 +1,4 @@
-.section-equipe {
+.equipe-container {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
