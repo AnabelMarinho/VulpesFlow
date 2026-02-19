@@ -3,7 +3,7 @@ import { Button } from '../../components/button/button';
 
 @Component({
   selector: 'app-services',
-  imports: [Button],
+  imports: [],
   templateUrl: './services.html',
   styleUrl: './services.css',
 })
