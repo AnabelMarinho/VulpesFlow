@@ -1,0 +1,89 @@
+.about-block-title {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    color: var(--accent);
+    margin: 0;
+}
+
+.about-block-subtitle {
+    margin-top: 0.75rem;
+    font-size: var(--font-sm);
+    color: rgba(243, 243, 243, 0.78);
+}
+
+.how-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.how-timeline {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.how-step {
+    flex: 1;
+    padding: 2rem;
+    border-radius: 2rem;
+    background: var(--bg-surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: 
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.how-step-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.how-step-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.how-step-desc {
+    font-size: 1rem;
+    color: rgba(243,243,243,0.75);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.how-step.active {
+    background: rgba(34,39,55,1);
+    border-color: rgba(255,107,53,0.6);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+    transform: translateY(-6px);
+}
+
+.how-step.active .how-step-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 764px) {
+  .how-timeline {
+    flex-direction: column;
+  }
+
+  .how-step {
+    flex: none;
+  }
+
+  .how-step.active {
+    transform: none;
+  }
+}
+

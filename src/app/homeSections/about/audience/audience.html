@@ -1,0 +1,50 @@
+<div class="audience">
+  <div class="audience-intro">
+    <h2 class="about-block-title">Para quem é a VulpesFlow?</h2>
+    <p class="about-block-subtitle">
+      Criamos automações para empresas e profissionais que querem crescer sem
+      aumentar o caos operacional.
+    </p>
+  </div>
+
+  <div class="audience-grid">
+    <div class="audience-list" role="tablist" aria-label="Perfis de interesse">
+      <button
+        *ngFor="let p of profiles; let i = index"
+        type="button"
+        class="audience-item"
+        role="tab"
+        [class.active]="activeIndex() === i"
+        [attr.aria-selected]="activeIndex() === i"
+        (click)="selectProfile(i)"
+      >
+        <span
+          class="audience-item-icon"
+          [class]="'tone-' + p.tone"
+          aria-hidden="true"
+        ></span>
+        <span class="audience-item-text">
+          <span class="audience-item-title">{{ p.label }}</span>
+          <span class="audience-item-desc">{{ p.listDescription }}</span>
+        </span>
+      </button>
+    </div>
+
+    <div class="audience-panel" [class.animate]="panelAnimate()">
+      <div class="audience-panel-kicker">
+        <span class="audience-dot" aria-hidden="true"></span>Perfil selecionado
+      </div>
+      <h3 class="audience-panel-title">{{ activeProfile().label }}</h3>
+      <p class="audience-panel-text">{{ activeProfile().panelText }}</p>
+      <ul class="audience-bullets">
+        <li *ngFor="let b of activeProfile().bullets">{{ b }}</li>
+      </ul>
+      <p class="audience-highlight">{{ activeProfile().highlight }}</p>
+      <app-button
+        [label]="activeProfile().ctaLabel"
+        variant="flow"
+        routerLink="/contato"
+      ></app-button>
+    </div>
+  </div>
+</div>

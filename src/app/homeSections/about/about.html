@@ -9,133 +9,17 @@
           negócios. Nossa missão é conectar sistemas.
         </p>
       </div>
-      <div class="about-feature media media--feature">
-        <img src="assets/icon2.svg" alt="Serviços VulpesFlow" />
-      </div>
+
     </div>
 
     <div class="about-block">
-      <div class="audience">
-        <div class="audience-intro">
-          <h2 class="about-block-title">Para quem é a VulpesFlow?</h2>
-          <p class="about-block-subtitle">
-            Criamos automações para empresas e profissionais que querem crescer
-            sem aumentar o caos operacional.
-          </p>
-        </div>
-
-        <div class="audience-grid">
-          <div
-            class="audience-list"
-            role="tablist"
-            aria-label="Perfis de interesse"
-          >
-            <button
-              *ngFor="let p of profiles; let i = index"
-              type="button"
-              class="audience-item"
-              role="tab"
-              [class.active]="activeIndex() === i"
-              [attr.aria-selected]="activeIndex() === i"
-              (click)="selectProfile(i)"
-            >
-              <span
-                class="audience-item-icon"
-                [class]="'tone-' + p.tone"
-                aria-hidden="true"
-              ></span>
-              <span class="audience-item-text">
-                <span class="audience-item-title">{{ p.label }}</span>
-                <span class="audience-item-desc">{{ p.listDescription }}</span>
-              </span>
-            </button>
-          </div>
-
-          <div class="audience-panel" [class.animate]="panelAnimate()">
-            <div class="audience-panel-kicker">
-              <span class="audience-dot" aria-hidden="true"></span>Perfil
-              selecionado
-            </div>
-            <h3 class="audience-panel-title">{{ activeProfile().label }}</h3>
-            <p class="audience-panel-text">{{ activeProfile().panelText }}</p>
-            <ul class="audience-bullets">
-              <li *ngFor="let b of activeProfile().bullets">{{ b }}</li>
-            </ul>
-            <p class="audience-highlight">{{ activeProfile().highlight }}</p>
-            <app-button
-              [label]="activeProfile().ctaLabel"
-              variant="flow"
-              routerLink="/contato"
-            ></app-button>
-          </div>
-        </div>
-      </div>
+      <app-about-audience></app-about-audience>
     </div>
     <div class="about-block">
-      <section class="benefits-orbit">
-      <h2 class="about-block-title">O que muda quando você automatiza?</h2>
-      <p class="about-block-subtitle">
-        Veja o impacto prático quando sua operação passa a ser realmente automatizada.
-      </p>
-      <div class="benefits-orbit-inner">
-
-        <div class="benefit-chip chip-1">
-          <span>Redução drástica de tarefas manuais</span>
-        </div>
-
-        <div class="benefit-chip chip-2">
-          <span>Atendimento inteligente 24/7</span>
-        </div>
-
-        <div class="benefit-chip chip-3">
-          <span>Economia real de tempo operacional</span>
-        </div>
-
-        <div class="benefits-core">
-          <p class="benefits-core-kicker">Impacto da automação</p>
-          <p class="benefits-core-text">
-            Automação não é apenas tecnologia. É eficiência, clareza e crescimento estruturado.
-          </p>
-        </div>
-
-        <div class="benefit-chip chip-4">
-          <span>Clareza total sobre dados e métricas</span>
-        </div>
-
-        <div class="benefit-chip chip-5">
-          <span>Processos padronizados e previsíveis</span>
-        </div>
-
-        <div class="benefit-chip chip-6">
-          <span>Mais leads convertidos automaticamente</span>
-        </div>
-
-      </div>
-
-    </section>
+      <app-about-benefits></app-about-benefits>
     </div>
     <div class="about-block">
-    <section class="how-section">
-      <h2 class="about-block-title">Como fazemos isso acontecer</h2>
-      <p class="about-block-subtitle">
-        Uma linha do tempo clara em quatro etapas: do diagnóstico à otimização contínua.
-      </p>
-      <div class="how-timeline">
-        <div
-          class="how-step"
-          *ngFor="let step of howSteps; let i = index"
-          [class.active]="howActiveIndex() === i"
-          (mouseenter)="activateStep(i)"
-          (click)="activateStep(i)"
-        >
-          <div class="how-step-number">{{ step.number }}</div>
-          <div class="how-step-body">
-            <h3 class="how-step-title">{{ step.title }}</h3>
-            <p class="how-step-desc">{{ step.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      <app-about-how></app-about-how>
     </div>
   </div>
 </section>

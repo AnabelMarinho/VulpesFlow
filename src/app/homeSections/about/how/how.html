@@ -1,0 +1,22 @@
+<section class="how-section">
+  <h2 class="about-block-title">Como fazemos isso acontecer</h2>
+  <p class="about-block-subtitle">
+    Uma linha do tempo clara em quatro etapas: do diagnóstico à otimização contínua.
+  </p>
+  <div class="how-timeline">
+    <div
+      class="how-step"
+      *ngFor="let step of howSteps; let i = index"
+      [class.active]="howActiveIndex() === i"
+      (mouseenter)="activateStep(i)"
+      (click)="activateStep(i)"
+    >
+      <div class="how-step-number">{{ step.number }}</div>
+      <div class="how-step-body">
+        <h3 class="how-step-title">{{ step.title }}</h3>
+        <p class="how-step-desc">{{ step.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
