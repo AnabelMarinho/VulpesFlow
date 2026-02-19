@@ -271,20 +271,31 @@
 }
 
 .benefits-orbit-inner {
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    justify-items: center;
     width: min(980px, 100%);
     min-height: 520px;
-padding: 6rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    padding: 6rem 0;
 }
+
+.chip-1 { grid-column: 1; grid-row: 1; }
+.chip-2 { grid-column: 3; grid-row: 1; }
+
+.chip-3 { grid-column: 1; grid-row: 2; }
+.benefits-core { grid-column: 2; grid-row: 2; }
+.chip-4 { grid-column: 3; grid-row: 2; }
+
+.chip-5 { grid-column: 1; grid-row: 3; }
+.chip-6 { grid-column: 3; grid-row: 3; }
+
 
 .benefits-core {
     position: relative;
     z-index: 2;
-    max-width: 24rem;
+    max-width: 20rem;
     text-align: center;
     padding: 2.5rem 2.75rem;
     border-radius: 2rem;
@@ -310,7 +321,6 @@ padding: 6rem 0;
 }
 
 .benefits-orbit-ring {
-    position: absolute;
     inset: 0;
     display: grid;
     place-items: center;
@@ -318,7 +328,6 @@ padding: 6rem 0;
 }
 
 .benefit-chip {
-    position: absolute;
     max-width: 13rem;
     padding: 0.8rem 1rem;
     border-radius: 1.5rem;
@@ -345,25 +354,6 @@ padding: 6rem 0;
     box-shadow: 0 18px 40px rgba(255, 107, 53, 0.35);
     background: rgba(25, 28, 40, 0.98);
 }
-
-.chip-1 { top: 0%; left: 10%; }
-.chip-2 { top: 0%; right: 10%; }
-
-.chip-3 {
-  top: 50%;
-  right: -2%;
-  transform: translateY(-50%);
-}
-
-.chip-6 {
-  top: 50%;
-  left: -2%;
-  transform: translateY(-50%);
-}
-
-.chip-4 { bottom: 0%; right: 14%; }
-.chip-5 { bottom: 0%; left: 14%; }
-
 
 .how-section {
     display: flex;
@@ -428,13 +418,15 @@ padding: 6rem 0;
 
 @media (max-width: 764px) {
 .benefits-orbit-inner {
-    aspect-ratio: auto;
-}
+    grid-template-columns: 1fr; /* vira 1 coluna */
+    gap: 1.5rem;
+    padding: 3rem 0;
+  }
 
-.benefits-orbit-inner {
-    flex-direction: column;
-    gap: 2rem;
-}
+  .benefits-orbit-inner > * {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
 
 .benefits-orbit-ring {
     position: static;
