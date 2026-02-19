@@ -1,25 +1,35 @@
 <section id="equipe-section" class="section-equipe vf-section">
-    <div class="vf-container">
-        <app-section-header
-            title="Equipe"
-            description="Somos uma equipe multidisciplinar de estudantes apaixonados por tecnologia, design e inovação. Cada integrante traz um talento diferente — juntos, desenvolvemos com propósito."
-        ></app-section-header>
-        <div class="team-container">
-            <app-team-card
-            name="Nicolas Costa"
-            image="https://i.pinimg.com/736x/7c/ca/d0/7ccad0edf81a838d1b1384efef0072a1.jpg"
-            role="CEO, Fundador e Desenvolvedor Full Stack"
-            description="Apaixonado por criar projetos com impacto social"
-            linkedinUrl="https://www.linkedin.com/in/nicolasemanueldev7/"
-            ></app-team-card>
-
-            <app-team-card
-            name="Anabel Marinho"
-            image="https://i.pinimg.com/736x/80/00/08/8000082d293163bde5055b096fd5b6da.jpg"
-            role="Fundadora e Desenvolvedora Full Stack"
-            description="Foco em design de interfaces e usabilidade."
-            linkedinUrl="https://www.linkedin.com/in/anabel-marinho-0b718231b/"
-            ></app-team-card>
-        </div>
+  <div class="vf-container">
+    <div class="team-header">
+      <h2 class="team-title">Nosso time por trás das automações</h2>
+      <p class="team-subtitle">
+        Tecnologia, produto e estratégia trabalhando juntos.
+      </p>
+      <p class="team-text">
+        A VulpesFlow nasce da união entre engenharia, design e visão de produto.
+        Cada integrante do time atua de forma estratégica para transformar processos
+        manuais em operações inteligentes e escaláveis.
+      </p>
     </div>
+
+    <div class="team-grid">
+      <app-team-card
+        name="Nicolas Costa"
+        image="assets/images/nicolas.jpeg"
+        role="Fundador &amp; Engenheiro de Automação"
+        description="Especialista em arquitetura de automações, integrações e desenvolvimento de soluções sob medida."
+        [stack]="['Automação', 'APIs', 'Angular', 'Backend']"
+        linkedinUrl="https://www.linkedin.com/in/nicolasemanueldev7/"
+      ></app-team-card>
+
+      <app-team-card
+        name="Anabel Marinho"
+        image="assets/images/anabel.jpeg"
+        role="Co-fundadora &amp; Head de Produto"
+        description="Especialista em experiência do usuário, estruturação de fluxos e design estratégico de produtos digitais."
+        [stack]="['UX', 'UI', 'Produto', 'Processos', 'n8n']"
+        linkedinUrl="https://www.linkedin.com/in/anabel-marinho-0b718231b/"
+      ></app-team-card>
+    </div>
+  </div>
 </section>

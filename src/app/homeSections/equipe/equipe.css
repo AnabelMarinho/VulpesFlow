@@ -1,17 +1,53 @@
 .section-equipe .vf-container {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 4rem;
 }
 
-.btn-container {
+.team-header {
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.team-container {
+.team-title {
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0;
+}
+
+.team-subtitle {
+  font-size: var(--font-sm);
+  color: rgba(243, 243, 243, 0.78);
+}
+
+.team-text {
+  font-size: var(--font-sm);
+  color: rgba(243, 243, 243, 0.78);
+}
+
+.team-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .team-header {
+    text-align: left;
+    align-items: flex-start;
+  }
 }

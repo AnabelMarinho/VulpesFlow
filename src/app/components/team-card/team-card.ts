@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-team-card',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './team-card.html',
   styleUrl: './team-card.css',
 })
@@ -12,4 +13,5 @@ export class TeamCard {
 @Input() role: string = '';
 @Input() description: string = '';
 @Input() linkedinUrl: string = '';
+@Input() stack: string[] = [];
 }
