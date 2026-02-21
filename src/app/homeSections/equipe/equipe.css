@@ -50,4 +50,14 @@
     text-align: left;
     align-items: flex-start;
   }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-container {
+    width: 100%;
+    min-width: 0;
+  }
+
 }
