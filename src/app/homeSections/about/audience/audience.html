@@ -30,6 +30,14 @@
       </button>
     </div>
 
+    <div class="audience-indicators">
+      <span
+        *ngFor="let p of profiles; let i = index"
+        class="indicator-dot"
+        [class.active]="activeIndex() === i"
+      ></span>
+    </div>
+
     <div class="audience-panel" [class.animate]="panelAnimate()">
       <div class="audience-panel-kicker">
         <span class="audience-dot" aria-hidden="true"></span>Perfil selecionado

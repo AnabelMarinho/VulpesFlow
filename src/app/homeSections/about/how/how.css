@@ -74,13 +74,15 @@
     transform: translateY(0);
 }
 
-@media (max-width: 764px) {
+@media (max-width: 900px) {
   .how-timeline {
     flex-direction: column;
   }
 
   .how-step {
     flex: none;
+    width: 100%;
+    max-width: 100%;
     transform: none;
     cursor: default;
   }

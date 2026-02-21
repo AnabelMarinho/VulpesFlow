@@ -230,10 +230,17 @@
 @media (max-width: 900px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        padding: 2.25rem 1.75rem;
+        padding: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
     }
 
     .projects-right {
         justify-content: flex-start;
+    }
+
+    .projects-card {
+        background-color: transparent;
     }
 }

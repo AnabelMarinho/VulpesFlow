@@ -36,10 +36,22 @@
 }
 
 @media (max-width: 768px) {
-    .about-block {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
-        padding: 0;
-    }
+
+  .section-about .vf-container {
+    gap: 2.5rem;
+  }
+
+  .about-block {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-lead {
+    max-width: 100%;
+  }
+
 }
