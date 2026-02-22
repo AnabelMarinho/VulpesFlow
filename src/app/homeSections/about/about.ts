@@ -10,4 +10,5 @@ import { AboutHow } from "./how/how";
   templateUrl: "./about.html",
   styleUrl: "./about.css",
 })
-export class About {}
+export class About {
+}

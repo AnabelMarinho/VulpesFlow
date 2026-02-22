@@ -1,9 +1,16 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject, signal } from "@angular/core";
+import { Component, computed, inject, signal } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import { HttpErrorResponse } from "@angular/common/http";
+import { Router } from "@angular/router";
+import { finalize } from "rxjs";
 import { Button } from "../../components/button/button";
 import { Footer } from "../../components/footer/footer";
 import { Header } from "../../components/header/header";
+import {
+  PropostaPayload,
+  PropostaService,
+} from "../../services/proposta.service";
 
 @Component({
   selector: "app-contato",
@@ -13,7 +20,36 @@ import { Header } from "../../components/header/header";
 })
 export class Contato {
   private readonly fb = inject(FormBuilder);
-  readonly sent = signal(false);
+  private readonly propostaService = inject(PropostaService);
+  private readonly router = inject(Router);
+  private redirectTimeout?: number;
+
+  readonly isLoading = signal(false);
+  readonly modalKind = signal<"success" | "error" | "rate" | null>(null);
+  readonly modalTitle = computed(() => {
+    switch (this.modalKind()) {
+      case "success":
+        return "Proposta enviada!";
+      case "rate":
+        return "Envio bloqueado temporariamente";
+      case "error":
+        return "Não foi possível enviar";
+      default:
+        return "";
+    }
+  });
+  readonly modalMessage = computed(() => {
+    switch (this.modalKind()) {
+      case "success":
+        return "Recebemos sua proposta e já vamos analisar. Redirecionando para a home.";
+      case "rate":
+        return "Você atingiu o limite de envios. Aguarde 1 minuto e tente novamente.";
+      case "error":
+        return "Ocorreu um erro ao enviar sua proposta. Tente novamente.";
+      default:
+        return "";
+    }
+  });
 
   readonly interestTopics = [
     "Automação de WhatsApp",
@@ -69,8 +105,53 @@ export class Contato {
   }
 
   onSubmit() {
-    this.sent.set(false);
-    if (this.form.invalid) return;
-    this.sent.set(true);
+    if (this.form.invalid || this.isLoading()) return;
+    this.modalKind.set(null);
+    this.isLoading.set(true);
+
+    const payload: PropostaPayload = {
+      interesses: this.form.controls.interests.value,
+      nome: this.form.controls.name.value,
+      email: this.form.controls.email.value,
+      descricao: this.form.controls.description.value,
+      orcamento: this.form.controls.budget.value ?? "",
+      anexo: this.form.controls.attachment.value ?? undefined,
+    };
+
+    this.propostaService
+      .enviarProposta(payload)
+      .pipe(finalize(() => this.isLoading.set(false)))
+      .subscribe({
+        next: () => {
+          this.modalKind.set("success");
+          this.scheduleRedirect();
+        },
+        error: (error: unknown) => {
+          if (error instanceof HttpErrorResponse) {
+            const retryAfter =
+              error.headers?.get("Retry-After") ??
+              error.headers?.get("Retry-Afte");
+            if (error.status === 429 && retryAfter) {
+              this.modalKind.set("rate");
+              this.scheduleRedirect();
+              return;
+            }
+          }
+          this.modalKind.set("error");
+        },
+      });
+  }
+
+  closeModal() {
+    this.modalKind.set(null);
+  }
+
+  private scheduleRedirect() {
+    if (this.redirectTimeout) {
+      clearTimeout(this.redirectTimeout);
+    }
+    this.redirectTimeout = window.setTimeout(() => {
+      this.router.navigateByUrl("/");
+    }, 3000);
   }
 }

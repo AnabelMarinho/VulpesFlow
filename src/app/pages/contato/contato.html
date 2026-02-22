@@ -9,7 +9,12 @@
           iremos analisar sua ideia e entraremos em contato com uma proposta imperdível
         </p>
 
-        <form class="contato-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <form
+          class="contato-form"
+          [class.is-loading]="isLoading()"
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+        >
           <div class="form-block">
             <h2 class="block-title">Estou interessado em...</h2>
             <div class="chips-grid">
@@ -75,12 +80,11 @@
 
           <div class="actions">
             <app-button
-              label="Enviar proposta"
+              [label]="isLoading() ? 'Enviando...' : 'Enviar proposta'"
               variant="primary"
               type="submit"
-              [disabled]="form.invalid"
+              [disabled]="form.invalid || isLoading()"
             ></app-button>
-            <p class="success" *ngIf="sent()">Enviado! Já já a gente te responde.</p>
           </div>
         </form>
       </div>
@@ -88,5 +92,41 @@
   </main>
 
   <app-footer></app-footer>
-</div>
 
+  <div class="modal-backdrop" *ngIf="modalKind() as kind">
+    <div class="modal-card" role="dialog" aria-live="assertive">
+      <div class="modal-icon" [class.error]="kind !== 'success'">
+        <svg
+          *ngIf="kind === 'success'"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M9.2 16.2 4.8 11.8 3.4 13.2 9.2 19 21 7.2 19.6 5.8z"
+            fill="currentColor"
+          />
+        </svg>
+        <svg
+          *ngIf="kind !== 'success'"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 2 1 21h22L12 2zm1 14h-2v-2h2v2zm0-4h-2V8h2v4z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <h2 class="modal-title">{{ modalTitle() }}</h2>
+      <p class="modal-message">{{ modalMessage() }}</p>
+      <button
+        *ngIf="kind === 'error'"
+        type="button"
+        class="modal-action"
+        (click)="closeModal()"
+      >
+        Tentar novamente
+      </button>
+    </div>
+  </div>
+</div>
