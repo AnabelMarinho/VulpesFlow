@@ -91,7 +91,7 @@
 }
 
 .media img {
-    width: min(52%, 150px);
+    width: min(62%, 300px);
     height: auto;
     position: relative;
     z-index: 1;
@@ -99,15 +99,15 @@
     opacity: 0.92;
 }
 
-.media--orange {
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.92), rgba(255, 196, 90, 0.82));
+.media--purple {
+    background: linear-gradient(135deg, rgba(24, 10, 152, 0.92), rgba(90, 255, 115, 0.82));
 }
 
 .media--cyan {
   background: linear-gradient(
     135deg,
-    rgba(0, 255, 200, 0.9),
-    rgba(0, 150, 255, 0.7)
+    rgba(255, 0, 81, 0.9),
+    rgba(0, 174, 255, 0.7)
   );
 }
 
