@@ -17,7 +17,7 @@ import { ContatoCta } from "../../homeSections/contato-cta/contato-cta";
     Header,
     About,
     Services,
-    Projects,
+    // Projects,
     Equipe,
     ContatoCta,
   ],

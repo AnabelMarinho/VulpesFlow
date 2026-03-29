@@ -3,5 +3,5 @@ export interface Environment {
 }
 
 export const environment: Environment = {
-    apiUrl: 'https://vulpesflowapi-production.up.railway.app'
+    apiUrl: 'https://vulpesflowapi-production-3e4b.up.railway.app'
 }
